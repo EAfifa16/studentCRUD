@@ -1,0 +1,42 @@
+<div class="container">
+    <div [hidden]="submitted">
+        <br>
+
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" id="firstname" required [(ngModel)]="student.firstname"
+                    name="firstname">
+            </div>
+            <div class="form-group">
+                <label for="name">Last Name</label>
+                <input type="text" class="form-control" id="lastname" required [(ngModel)]="student.lastname"
+                    name="lastname">
+            </div>
+            <div class="form-group">
+                <label for="name">Age</label>
+                <input type="text" class="form-control" id="age" required [(ngModel)]="student.age" name="age">
+            </div>
+            <div class="form-group">
+                <label for="name">Telephone</label>
+                <input type="text" class="form-control" id="telephone" required [(ngModel)]="student.telephone"
+                    name="telephone">
+            </div>
+            <div class="form-group">
+                <label for="name">Address</label>
+                <input type="text" class="form-control" id="address" required [(ngModel)]="student.address"
+                    name="address">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        
+    </div>
+    <br>
+    <div [hidden]="!submitted">
+        <h4>You submitted successfully!</h4>
+        <button type="submit" class="btn btn-success" (click)="homePageComponent()">back</button>
+    </div>
+    <br>
+</div>

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <table class="table table-hover table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>s_id</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>age</th>
+                <th>telephone</th>
+                <th>address</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.sid}}</td>
+                <td>{{student.firstname}}</td>
+                <td>{{student.lastname}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.telephone}}</td>
+                <td>{{student.address}}</td>
+                <td>
+                    <button type="submit" class="btn btn-danger" style="margin-left: 20px;" (click)="deleteStudent(student.sid)">delete</button>
+                    <button type="submit" class="btn btn-success" style="margin-left: 20px;" (click)="editStudentComponent(student.sid)">edit</button>
+                    <button type="submit" class="btn btn-warning" style="margin-left: 20px;" (click)="updateStudentComponent(student.sid)">update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
